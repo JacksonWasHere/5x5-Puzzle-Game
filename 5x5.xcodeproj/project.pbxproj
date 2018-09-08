@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A07049D212A63DA000BDA53 /* ShapeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A07049C212A63DA000BDA53 /* ShapeSelectorViewController.swift */; };
+		7A0704A4212B4A8E000BDA53 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0704A3212B4A8E000BDA53 /* Shape.swift */; };
+		7A0704A6212B5095000BDA53 /* ShapeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0704A5212B5095000BDA53 /* ShapeController.swift */; };
 		7AC266AE2128772A009BD669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC266AD2128772A009BD669 /* AppDelegate.swift */; };
-		7AC266B02128772A009BD669 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC266AF2128772A009BD669 /* ViewController.swift */; };
+		7AC266B02128772A009BD669 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC266AF2128772A009BD669 /* MainViewController.swift */; };
 		7AC266B32128772A009BD669 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC266B12128772A009BD669 /* Main.storyboard */; };
-		7AC266B62128772A009BD669 /* _x5.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AC266B42128772A009BD669 /* _x5.xcdatamodeld */; };
 		7AC266B82128772E009BD669 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AC266B72128772E009BD669 /* Assets.xcassets */; };
 		7AC266BB2128772E009BD669 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC266B92128772E009BD669 /* LaunchScreen.storyboard */; };
+		7AC266C32128789B009BD669 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC266C22128789B009BD669 /* GameViewController.swift */; };
+		7AC266C7212896D3009BD669 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC266C6212896D3009BD669 /* Game.swift */; };
+		7AC266C921294FD1009BD669 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC266C821294FD1009BD669 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A07049C212A63DA000BDA53 /* ShapeSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeSelectorViewController.swift; sourceTree = "<group>"; };
+		7A0704A3212B4A8E000BDA53 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		7A0704A5212B5095000BDA53 /* ShapeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeController.swift; sourceTree = "<group>"; };
 		7AC266AA2128772A009BD669 /* 5x5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 5x5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC266AD2128772A009BD669 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7AC266AF2128772A009BD669 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7AC266AF2128772A009BD669 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7AC266B22128772A009BD669 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7AC266B52128772A009BD669 /* _x5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _x5.xcdatamodel; sourceTree = "<group>"; };
 		7AC266B72128772E009BD669 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AC266BA2128772E009BD669 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AC266BC2128772E009BD669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AC266C22128789B009BD669 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		7AC266C6212896D3009BD669 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		7AC266C821294FD1009BD669 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +47,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A07049E212A640F000BDA53 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A0704A0212A6436000BDA53 /* Subviews */,
+				7AC266AF2128772A009BD669 /* MainViewController.swift */,
+				7AC266C22128789B009BD669 /* GameViewController.swift */,
+				7A07049C212A63DA000BDA53 /* ShapeSelectorViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A07049F212A6420000BDA53 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7AC266C821294FD1009BD669 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7A0704A0212A6436000BDA53 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				7AC266C6212896D3009BD669 /* Game.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		7A0704A7212B50A5000BDA53 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7A0704A3212B4A8E000BDA53 /* Shape.swift */,
+				7A0704A5212B5095000BDA53 /* ShapeController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		7AC266A12128772A009BD669 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +102,14 @@
 		7AC266AC2128772A009BD669 /* 5x5 */ = {
 			isa = PBXGroup;
 			children = (
+				7A0704A7212B50A5000BDA53 /* Classes */,
+				7A07049F212A6420000BDA53 /* Extensions */,
+				7A07049E212A640F000BDA53 /* Views */,
 				7AC266AD2128772A009BD669 /* AppDelegate.swift */,
-				7AC266AF2128772A009BD669 /* ViewController.swift */,
 				7AC266B12128772A009BD669 /* Main.storyboard */,
 				7AC266B72128772E009BD669 /* Assets.xcassets */,
 				7AC266B92128772E009BD669 /* LaunchScreen.storyboard */,
 				7AC266BC2128772E009BD669 /* Info.plist */,
-				7AC266B42128772A009BD669 /* _x5.xcdatamodeld */,
 			);
 			path = 5x5;
 			sourceTree = "<group>";
@@ -138,9 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AC266B62128772A009BD669 /* _x5.xcdatamodeld in Sources */,
-				7AC266B02128772A009BD669 /* ViewController.swift in Sources */,
+				7AC266C921294FD1009BD669 /* Extensions.swift in Sources */,
+				7AC266B02128772A009BD669 /* MainViewController.swift in Sources */,
+				7AC266C32128789B009BD669 /* GameViewController.swift in Sources */,
+				7A0704A4212B4A8E000BDA53 /* Shape.swift in Sources */,
 				7AC266AE2128772A009BD669 /* AppDelegate.swift in Sources */,
+				7A0704A6212B5095000BDA53 /* ShapeController.swift in Sources */,
+				7AC266C7212896D3009BD669 /* Game.swift in Sources */,
+				7A07049D212A63DA000BDA53 /* ShapeSelectorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +343,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.compileforawhile.-x5";
+				PRODUCT_BUNDLE_IDENTIFIER = com.compileforawhile.5x5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,7 +361,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.compileforawhile.-x5";
+				PRODUCT_BUNDLE_IDENTIFIER = com.compileforawhile.5x5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,19 +390,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7AC266B42128772A009BD669 /* _x5.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7AC266B52128772A009BD669 /* _x5.xcdatamodel */,
-			);
-			currentVersion = 7AC266B52128772A009BD669 /* _x5.xcdatamodel */;
-			path = _x5.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 7AC266A22128772A009BD669 /* Project object */;
 }
