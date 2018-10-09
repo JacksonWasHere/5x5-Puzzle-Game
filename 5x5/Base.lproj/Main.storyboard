@@ -307,14 +307,61 @@
                     <view key="view" contentMode="scaleToFill" id="Mw1-gq-14S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZn-7F-e9k">
+                                <rect key="frame" x="16" y="80" width="343" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cross" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWe-u6-hHu">
+                                        <rect key="frame" x="30" y="57" width="75" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vff-yG-2D3">
+                                        <rect key="frame" x="193" y="25" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Kmu-65-jRG"/>
+                                            <constraint firstAttribute="height" constant="100" id="OVn-X0-cB2"/>
+                                        </constraints>
+                                        <state key="normal" image="Cross"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="lWe-u6-hHu" firstAttribute="leading" secondItem="UZn-7F-e9k" secondAttribute="leading" constant="30" id="JG7-lR-6Ec"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vff-yG-2D3" secondAttribute="trailing" constant="50" id="KaI-qm-p3C"/>
+                                    <constraint firstAttribute="bottom" secondItem="lWe-u6-hHu" secondAttribute="bottom" constant="57" id="Ps0-kB-BDs"/>
+                                    <constraint firstAttribute="height" constant="150" id="YDk-O1-dSO"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vff-yG-2D3" secondAttribute="bottom" constant="25" id="eBu-Fm-CAF"/>
+                                    <constraint firstItem="lWe-u6-hHu" firstAttribute="top" secondItem="UZn-7F-e9k" secondAttribute="top" constant="57" id="uIe-9j-cf2"/>
+                                    <constraint firstItem="Vff-yG-2D3" firstAttribute="top" secondItem="UZn-7F-e9k" secondAttribute="top" constant="25" id="vYh-dO-pEk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UZn-7F-e9k" firstAttribute="leading" secondItem="u9q-dr-wzp" secondAttribute="leading" constant="16" id="0vp-NG-Buy"/>
+                            <constraint firstItem="u9q-dr-wzp" firstAttribute="trailing" secondItem="UZn-7F-e9k" secondAttribute="trailing" constant="16" id="MPp-gH-T8k"/>
+                            <constraint firstItem="UZn-7F-e9k" firstAttribute="top" secondItem="u9q-dr-wzp" secondAttribute="top" constant="16" id="NVW-m3-Vxv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="u9q-dr-wzp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Shape Selector" id="0nZ-Hg-VsZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHX-15-Zue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="-560"/>
+            <point key="canvasLocation" x="1048.8" y="-560.86956521739137"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Vde-pV-BqZ">
@@ -384,6 +431,9 @@ Your Goal: 
             <point key="canvasLocation" x="-754" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Cross" width="310" height="310"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ohn-WI-rbj"/>
         <segue reference="A7m-Bk-c5W"/>

@@ -33,7 +33,10 @@ class GameViewController: UIViewController {
             
             //add the action when 'OK' is pressed
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(action) in
-                if let newSize = Int(alert.textFields![0].text!) {
+                if alert.textFields![0].text!=="0" {
+                    alert.textFields![0].text!=""
+                }
+                if let newSize = Int(alert.textFields![0].text!){
                     //set the size if newSize isn't nil
                     self.boardSize = newSize
                 } else {

@@ -12,7 +12,6 @@ class ShapeSelectorViewController: UIViewController {
 
     var scrollView:UIScrollView!
     var choiceView:UIView!
-    var images = ["Cross","Hallow Cross","X","T","Line","Diagonal","I Shape"]
     var shapeSelection:ShapeController!
     
     override func viewDidLoad() {
@@ -52,10 +51,9 @@ class ShapeSelectorViewController: UIViewController {
         //create the button with the proper dimensions
         let button = UIButton(frame: CGRect(x: 10, y: 10 + buttonArray.count * Int(self.view.frame.width-150), width: Int(self.view.frame.width-20), height: Int(self.view.frame.width-160)))
         
-        //set the border and corner properties
         button.layer.borderWidth = 2
         button.layer.cornerRadius = 6
-        
+
         //set the title and make the button selected if it is the current shape
         button.setTitle(name, for: .normal)
         if name == shapeSelection.getActive().title {
@@ -65,7 +63,7 @@ class ShapeSelectorViewController: UIViewController {
             button.setTitleColor(UIColor.black, for: .normal)
             button.layer.borderColor = UIColor.black.cgColor
         }
-        
+
         button.backgroundColor = UIColor.white
         
         //perform selected action when tapped
@@ -97,16 +95,5 @@ class ShapeSelectorViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

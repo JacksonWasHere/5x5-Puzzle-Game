@@ -12,7 +12,7 @@ class Game: UIView {
     
     //array of buttons
     var gameButtons = [[UIButton]]()
-    var buttonSize:CGFloat!
+    var buttonSize:Int!
     var moveShape:Shape!
     //location of the tap in the move shape
     var tapLocation = CGPoint(x: 0, y: 0)
@@ -20,14 +20,14 @@ class Game: UIView {
     //what to do when you tap (this is a closure)
     var tapFunc:(()->(Void))!
     //the colors of solved and unsolved
-    var onColor = UIColor(red: 55/255, green: 141/255, blue: 75/255, alpha: 1)
-    var offColor = UIColor(red: 181/255, green: 56/255, blue: 0, alpha: 1)
+    var onColor = UIColor(red: 0/255, green: 255/255, blue: 158/255, alpha: 1)
+    var offColor = UIColor(red: 20/255, green: 0/255, blue: 129/255, alpha: 1)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         //create the default board
         boardSize = CGSize(width: 5, height: 5)
-        buttonSize = self.frame.width/boardSize.width
+        buttonSize = Int(self.frame.width/boardSize.width)
         
         setup()
     }
@@ -36,7 +36,7 @@ class Game: UIView {
         super.init(frame: frame)
         //create board using game and add the ontap function
         boardSize = CGSize(width: game, height: game)
-        buttonSize = self.frame.width/boardSize.width
+        buttonSize = Int(self.frame.width/boardSize.width)
         tapFunc = onTap
         setup()
     }
@@ -59,7 +59,7 @@ class Game: UIView {
             for y in 0..<Int(boardSize.height) {
                 
                 //create the frame for the button
-                let rect = CGRect(x: CGFloat(x) * buttonSize, y: CGFloat(y) * buttonSize, width: buttonSize, height: buttonSize)
+                let rect = CGRect(x: x * buttonSize, y: y * buttonSize, width: buttonSize, height: buttonSize)
                 
                 //create the button with the frame and modify the button
                 let button = UIButton(frame: rect)
@@ -78,8 +78,10 @@ class Game: UIView {
     
     @objc func swap(_ sender: UIButton) {
         //find the tap location
-        let xtap = Int(sender.frame.origin.x/buttonSize)
-        let ytap = Int(sender.frame.origin.y/buttonSize)
+        let xtap = Int(sender.frame.origin.x)/buttonSize
+        let ytap = Int(sender.frame.origin.y)/buttonSize
+        print(buttonSize)
+        print(xtap,ytap)
         //swap at the tap location
         swapXY(xt: xtap, yt: ytap)
         //call the function that is done when tapped

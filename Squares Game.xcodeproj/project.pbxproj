@@ -10,6 +10,7 @@
 		7A07049D212A63DA000BDA53 /* ShapeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A07049C212A63DA000BDA53 /* ShapeSelectorViewController.swift */; };
 		7A0704A4212B4A8E000BDA53 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0704A3212B4A8E000BDA53 /* Shape.swift */; };
 		7A0704A6212B5095000BDA53 /* ShapeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0704A5212B5095000BDA53 /* ShapeController.swift */; };
+		7A4AA0C0214B085600D0C374 /* ShapeSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4AA0BF214B085600D0C374 /* ShapeSelect.swift */; };
 		7AC266AE2128772A009BD669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC266AD2128772A009BD669 /* AppDelegate.swift */; };
 		7AC266B02128772A009BD669 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC266AF2128772A009BD669 /* MainViewController.swift */; };
 		7AC266B32128772A009BD669 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC266B12128772A009BD669 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		7A07049C212A63DA000BDA53 /* ShapeSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeSelectorViewController.swift; sourceTree = "<group>"; };
 		7A0704A3212B4A8E000BDA53 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		7A0704A5212B5095000BDA53 /* ShapeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeController.swift; sourceTree = "<group>"; };
+		7A4AA0BF214B085600D0C374 /* ShapeSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeSelect.swift; sourceTree = "<group>"; };
 		7AC266AA2128772A009BD669 /* 5x5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 5x5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC266AD2128772A009BD669 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AC266AF2128772A009BD669 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				7AC266C6212896D3009BD669 /* Game.swift */,
+				7A4AA0BF214B085600D0C374 /* ShapeSelect.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -149,7 +152,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7AC266A52128772A009BD669 /* Build configuration list for PBXProject "5x5" */;
+			buildConfigurationList = 7AC266A52128772A009BD669 /* Build configuration list for PBXProject "Squares Game" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4AA0C0214B085600D0C374 /* ShapeSelect.swift in Sources */,
 				7AC266C921294FD1009BD669 /* Extensions.swift in Sources */,
 				7AC266B02128772A009BD669 /* MainViewController.swift in Sources */,
 				7AC266C32128789B009BD669 /* GameViewController.swift in Sources */,
@@ -336,15 +340,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YMFN925BMZ;
-				INFOPLIST_FILE = 5x5/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/5x5/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.compileforawhile.5x5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.compileforawhile.SquaresGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,15 +360,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YMFN925BMZ;
-				INFOPLIST_FILE = 5x5/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/5x5/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.compileforawhile.5x5;
+				PRODUCT_BUNDLE_IDENTIFIER = com.compileforawhile.SquaresGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -371,7 +379,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7AC266A52128772A009BD669 /* Build configuration list for PBXProject "5x5" */ = {
+		7AC266A52128772A009BD669 /* Build configuration list for PBXProject "Squares Game" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AC266BD2128772E009BD669 /* Debug */,
