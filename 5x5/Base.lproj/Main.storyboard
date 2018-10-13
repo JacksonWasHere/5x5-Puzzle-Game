@@ -291,6 +291,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U5u-J4-E0C"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vAM-8S-I5P"/>
                     <connections>
                         <outlet property="randomButton" destination="56V-KG-XAv" id="pIe-fJ-2DB"/>
                         <outlet property="resetButton" destination="L8m-1w-UGe" id="tGf-1N-ybl"/>
@@ -437,6 +438,6 @@ Your Goal: 
     <inferredMetricsTieBreakers>
         <segue reference="ohn-WI-rbj"/>
         <segue reference="A7m-Bk-c5W"/>
-        <segue reference="IHe-G7-YvK"/>
+        <segue reference="pk5-9y-fer"/>
     </inferredMetricsTieBreakers>
 </document>
