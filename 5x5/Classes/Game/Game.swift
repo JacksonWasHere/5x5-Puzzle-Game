@@ -18,7 +18,7 @@ class Game: UIView {
     var tapLocation = CGPoint(x: 0, y: 0)
     var boardSize:CGSize!
     //what to do when you tap (this is a closure)
-    var tapFunc:(()->(Void))!
+    var tapFunc:(()->(Void))?
     //the colors of solved and unsolved
     var onColor = UIColor(red: 0/255, green: 255/255, blue: 158/255, alpha: 1)
     var offColor = UIColor(red: 20/255, green: 0/255, blue: 129/255, alpha: 1)
@@ -28,7 +28,6 @@ class Game: UIView {
         //create the default board
         boardSize = CGSize(width: 5, height: 5)
         buttonSize = Int(self.frame.width/boardSize.width)
-        
         setup()
     }
     
@@ -48,6 +47,7 @@ class Game: UIView {
     @objc func setup() {
         //reset gameButtons and clear all subviews
         gameButtons = [[UIButton]]()
+        buttonSize = Int(self.frame.width/boardSize.width)
         while let subviews = self.subviews.last {
             subviews.removeFromSuperview()
         }
@@ -65,8 +65,8 @@ class Game: UIView {
                 let button = UIButton(frame: rect)
                 button.backgroundColor = offColor
                 button.addTarget(self, action: #selector(swap), for: .touchUpInside)
-                button.layer.borderWidth = 2
-                button.layer.borderColor = UIColor(white: 1 , alpha: 1).cgColor
+                button.layer.borderWidth = 4
+                button.layer.borderColor = UIColor(red: 227/255, green: 255/255, blue: 248/255, alpha: 1).cgColor
                 self.addSubview(button)
                 //add this button
                 row.append(button)
@@ -80,16 +80,15 @@ class Game: UIView {
         //find the tap location
         let xtap = Int(sender.frame.origin.x)/buttonSize
         let ytap = Int(sender.frame.origin.y)/buttonSize
-        print(buttonSize)
-        print(xtap,ytap)
         //swap at the tap location
         swapXY(xt: xtap, yt: ytap)
         //call the function that is done when tapped
-        tapFunc()
+        if let fun = tapFunc {
+            fun()
+        }
     }
     
     func swapXY(xt:Int,yt:Int) {
-        print("\(xt), \(yt)")
         //loop through the move shape
         for x in 0..<moveShape.shapeArray.count {
             for y in 0..<moveShape.shapeArray[x].count {

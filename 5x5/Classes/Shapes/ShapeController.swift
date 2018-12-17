@@ -75,9 +75,13 @@ class ShapeController {
 //    }
     
     func getActive() -> Shape {
+        return self.getShape(name: self.activeShape)
+    }
+    
+    func getShape(name: String) -> Shape {
         //return the first shape that has a title equal to the current shape
         return shapes.first(where: {(shape) -> Bool in
-            return shape.title==activeShape
+            return shape.title==name
         })!
     }
 }

@@ -9,53 +9,67 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    var shape = ShapeController()
+    var controller:GameController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let rect = CGRect(x: self.view.frame.width/2 - 150, y: self.view.frame.height/2 - 150, width: 300, height: 300)
+        self.controller = GameController(frame: rect, onTap:checkSolve)
+        controller.game.swapXY(xt: 2, yt: 2)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        print(shape.getActive().title)
+    func resetGame() {
+        self.controller.frame = CGRect(x: self.view.frame.width/2 - 150, y: self.view.frame.height/2 - 150, width: 300, height: 300)
+        self.controller.setup()
     }
+    
+    func checkSolve() {
+        if self.controller.game.isSolved() {
+            
+            //if solved then create congratulations alert
+            let congrats = UIAlertController(title: "Congratulations", message: "You solved the the puzzle", preferredStyle: UIAlertController.Style.alert)
+            
+            //awesom button
+            let awesome = UIAlertAction(title: "Awesome", style: UIAlertAction.Style.cancel, handler: nil)
+            
+            congrats.addAction(awesome)
+            
+            //present
+            present(congrats, animated: false, completion: nil)
+        }
+    }
+    
+    @IBAction func showGame(_ sender: UIButton) {
+        UIView.animate(withDuration: 1.0, animations: {()->Void in
+            sender.transform = CGAffineTransform(rotationAngle: .pi/4)
+        }, completion: {(Bool)->Void in
+            self.view.addSubview(self.controller.game)
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        let ohNo = UIAlertController(title: "Oh no", message: "what did you do", preferredStyle: UIAlertController.Style.alert)
+        
+        //awesom button
+        let rip = UIAlertAction(title: "I'm Sorry", style: UIAlertAction.Style.cancel, handler: nil)
+        
+        ohNo.addAction(rip)
+        
+        //present
+        present(ohNo, animated: false, completion: nil)
     }
 
+    @IBAction func mainScreenUnwind(unwindSegue: UIStoryboardSegue) {
+        self.controller.frame = CGRect(x: self.view.frame.width/2 - 150, y: self.view.frame.height/2 - 150, width: 300, height: 300)
+        self.controller.setup()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(shape.getActive().title)
-        
-        //check if the sender is a button
-        guard let button = sender as? UIButton else {
-            fatalError("Bad Button")
-        }
-        
-        //if the destination is a gameviewcontroller
-        if let gamePage = segue.destination as? GameViewController {
-            
-            //default size is 1 and it is not custom
-            var size = 1
-            var custom = false
-            
-            if button.titleLabel?.text == "Custom Size" {
-                //if the title says custom then size is 5 by default and it is custom
-                size = 5
-                custom = true
-                print("is custom")
-            } else {
-                //else size is the first character in the label
-                size = Int(String((button.titleLabel?.text?.first!)!))!
-            }
-            //the shape is active shape, boardSize is size, custom is custom
-            gamePage.shape = self.shape.getActive()
-            gamePage.boardSize = size
-            gamePage.custom = custom
-        }
-        // if it is a shape selector then set the controller as the current controller
-        if let shapeSelect = segue.destination as? ShapeSelectorViewController {
-            shapeSelect.shapeSelection = self.shape
+        if let dest = segue.destination as? MenuViewController {
+            dest.controller = self.controller
         }
     }
 }

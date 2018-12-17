@@ -22,52 +22,11 @@ class GameViewController: UIViewController {
         //create the game rectangle
         let rect = CGRect(x: 10, y: 74, width: self.view.frame.width - 20, height: self.view.frame.width - 20)
         
-        if custom {
-            //create an alert if size is custom
-            let alert = UIAlertController(title: "Input Size", message: "This will make a square with these dimensions", preferredStyle: UIAlertControllerStyle.alert)
-            
-            //add the text field with the keyboard as a number pad
-            alert.addTextField(configurationHandler: {(textField) in
-                textField.keyboardType = UIKeyboardType.numberPad
-            })
-            
-            //add the action when 'OK' is pressed
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(action) in
-                if alert.textFields![0].text!=="0" {
-                    alert.textFields![0].text!=""
-                }
-                if let newSize = Int(alert.textFields![0].text!){
-                    //set the size if newSize isn't nil
-                    self.boardSize = newSize
-                } else {
-                    //if it is not then tell them and set size to 5
-                    let invalidAlert = UIAlertController(title: "Invalid", message: "you must enter a number", preferredStyle: UIAlertControllerStyle.alert)
-                    invalidAlert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: {(alert) in return }))
-                    
-                    //present the invalid number alert
-                    self.present(invalidAlert, animated: false, completion: nil)
-                    self.boardSize = 5
-                }
-                
-                //set the view to a new game with the rect, size, and action upon tap
-                self.buttonView = Game(frame: rect, game: self.boardSize, onTap: self.checkSolve)
-                
-                //add view and set the shape
-                self.view.addSubview(self.buttonView)
-                self.buttonView.moveShape = self.shape
-                print(self.boardSize)
-            }))
-            
-            //present the size input
-            present(alert, animated: false, completion: nil)
-        }
-        else {
-            //if not custom then create the game with same parameters
-            buttonView = Game(frame: rect,game: boardSize, onTap: checkSolve)
-            buttonView.setup()
-            buttonView.moveShape = self.shape
-            self.view.addSubview(buttonView)
-        }
+        //if not custom then create the game with same parameters
+        buttonView = Game(frame: rect,game: boardSize, onTap: checkSolve)
+        buttonView.setup()
+        buttonView.moveShape = self.shape
+        self.view.addSubview(buttonView)
         
         self.title = "Size: \(self.boardSize)x\(self.boardSize)"
         
@@ -97,10 +56,10 @@ class GameViewController: UIViewController {
         if buttonView.isSolved() {
             
             //if solved then create congratulations alert
-            let congrats = UIAlertController(title: "Congratulations", message: "You solved the the puzzle", preferredStyle: UIAlertControllerStyle.alert)
+            let congrats = UIAlertController(title: "Congratulations", message: "You solved the the puzzle", preferredStyle: UIAlertController.Style.alert)
             
             //awesom button
-            let awesome = UIAlertAction(title: "Awesome", style: UIAlertActionStyle.cancel, handler: nil)
+            let awesome = UIAlertAction(title: "Awesome", style: UIAlertAction.Style.cancel, handler: nil)
             
             congrats.addAction(awesome)
             
